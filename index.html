@@ -1,331 +1,423 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>김종민 자기소개</title>
-<style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
-    background: #f4f5f7;
-    color: #222;
-    line-height: 1.6;
-  }
-  .wrap {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 40px 20px 80px;
-  }
-  header.profile {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  header.profile h1 {
-    font-size: 2rem;
-    margin-bottom: 4px;
-  }
-  .info-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  }
-  .info-table tr {
-    border-bottom: 1px solid #eee;
-  }
-  .info-table tr:last-child {
-    border-bottom: none;
-  }
-  .info-table th {
-    width: 120px;
-    text-align: left;
-    padding: 12px 16px;
-    background: #fafafa;
-    color: #555;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  .info-table td {
-    padding: 12px 16px;
-  }
-  .info-table a {
-    color: #2563eb;
-    text-decoration: none;
-  }
-  .info-table a:hover {
-    text-decoration: underline;
-  }
-  h2.section-title {
-    font-size: 1.4rem;
-    margin: 50px 0 18px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #333;
-  }
-  aside.card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin-bottom: 18px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  }
-  aside.card h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-  }
-  aside.card h4 {
-    margin: 14px 0 6px;
-    font-size: 0.98rem;
-    color: #444;
-  }
-  aside.card ul {
-    margin: 0 0 10px;
-    padding-left: 20px;
-  }
-  aside.card ul li {
-    margin-bottom: 4px;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 6px;
-  }
-  .tag {
-    background: #eef2ff;
-    color: #3730a3;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 0.88rem;
-  }
-  .company-block {
-    margin-bottom: 16px;
-  }
-  .company-block:last-child {
-    margin-bottom: 0;
-  }
-  .company-block h4 {
-    font-size: 1.05rem;
-    color: #111;
-  }
-  .division {
-    margin: 6px 0 4px;
-    font-weight: 600;
-    color: #555;
-  }
-  .portfolio-item h4 {
-    font-size: 1.15rem;
-    color: #111;
-    margin-bottom: 10px;
-  }
-  .portfolio-item p.sub {
-    font-weight: 600;
-    color: #444;
-    margin: 12px 0 4px;
-  }
-  .link-btn {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 16px;
-    background: #2563eb;
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.92rem;
-  }
-  .link-btn:hover {
-    background: #1d4ed8;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김종민 | 포트폴리오 & 자기소개</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-bg: #eff6ff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --bg-body: #f8fafc;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    /* 프로필 영역 */
+    .profile-header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .profile-header .age {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
+
+    .headline {
+      margin-top: 8px;
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .info-label {
+      width: 90px;
+      color: var(--text-muted);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .info-value a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .info-value a:hover {
+      text-decoration: underline;
+    }
+
+    /* 섹션 타이틀 */
+    h2.section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--text-main);
+    }
+
+    h3.sub-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 18px 0 10px;
+      color: #111827;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    /* 체크박스 목록 */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 6px;
+    }
+
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* 스택 배지 */
+    .stack-group {
+      margin-bottom: 16px;
+    }
+
+    .stack-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* 입사 희망 분야 박스 */
+    .wish-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .wish-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      background: #fafafa;
+    }
+
+    .wish-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    /* 프로젝트 카드 */
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px;
+      background: #fafafa;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #f3f4f6;
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="profile">
-    <h1>김종민 (28세)</h1>
-  </header>
+  <div class="container">
+    <!-- 기본 프로필 -->
+    <header class="card profile-header">
+      <h1>김종민 <span class="age">(28세)</span></h1>
+      <p class="headline">"새로운 기술 습득을 즐기고 기본기와 신뢰성을 추구하는 백엔드 개발자"</p>
+      
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="info-label">거주지</span>
+          <span class="info-value">서울특별시 강북구 오패산로 52아길 8 102호</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">학력</span>
+          <span class="info-value">강원대학교 AI소프트웨어학과 (졸업)</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">학점</span>
+          <span class="info-value">총 3.39 / 전공 3.58 (4.5 만점)</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">GitHub</span>
+          <span class="info-value">
+            <a href="https://github.com/moongchimom" target="_blank" rel="noreferrer">github.com/moongchimom</a>
+          </span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">특기</span>
+          <span class="info-value">운동 및 역동적인 야외 활동</span>
+        </div>
+      </div>
+    </header>
 
-  <table class="info-table">
-    <tr>
-      <th>거주</th>
-      <td>서울특별시 오패산로 52아길 8 102호</td>
-    </tr>
-    <tr>
-      <th>학력사항</th>
-      <td>강원대학교 AI소프트웨어학과 졸업</td>
-    </tr>
-    <tr>
-      <th>총 학점</th>
-      <td>3.39 / 4.5</td>
-    </tr>
-    <tr>
-      <th>전공학점</th>
-      <td>3.58 / 4.5</td>
-    </tr>
-    <tr>
-      <th>GitHub</th>
-      <td><a href="https://github.com/moongchimom" target="_blank">https://github.com/moongchimom</a></td>
-    </tr>
-  </table>
+    <!-- 1. 자기소개 -->
+    <section class="card">
+      <h2 class="section-title">1. 자기소개</h2>
 
-  <!-- 1. 자기분석 -->
-  <h2 class="section-title">1. 자기분석</h2>
-
-  <aside class="card">
-    <h3>💡 성격</h3>
-    <h4>장점</h4>
-    <ul>
-      <li>새로운 기술을 배우고 직접 적용해 보는 것을 즐깁니다.</li>
-      <li>맡은 업무는 책임감을 가지고 끝까지 수행하는 편입니다.</li>
-      <li>팀원들과 적극적으로 소통하며 협업 및 타협에 능합니다.</li>
-    </ul>
-    <h4>좋아하는 것</h4>
-    <ul>
-      <li>새로운 기술 학습</li>
-    </ul>
-    <h4>단점</h4>
-    <ul>
-      <li>완성도를 높이기 위해 세부적인 부분까지 지나치게 신경 쓰는 경향이 있습니다.</li>
-      <li>성격이 우유부단하여 의사결정에 문제가 있을 때가 있습니다.</li>
-    </ul>
-    <h4>싫어하는 것</h4>
-    <ul>
-      <li>비효율적 일처리</li>
-    </ul>
-  </aside>
-
-  <aside class="card">
-    <h3>✅ 목표</h3>
-    <h4>교육생으로서</h4>
-    <ul>
-      <li>☐ Java와 Spring Boot를 활용한 백엔드 개발 역량 향상</li>
-      <li>☐ 팀원들과 잘 협업하여 프로젝트 완성하기</li>
-      <li>☐ 교육 종료 후 채용 연계 기업에서 즉시 실무에 적응할 수 있는 개발자 수준의 역량 갖추기</li>
-    </ul>
-    <h4>프로그래머로서</h4>
-    <ul>
-      <li>☐ 사용자에게 안정적이고 신뢰할 수 있는 서비스를 제공하는 백엔드 개발자 되기</li>
-      <li>☐ 기술 변화에 능동적으로 대응하며 꾸준히 성장하는 개발자 되기</li>
-      <li>☐ 코드의 동작뿐 아니라 유지보수성과 가독성을 고려하는 개발 습관 기르기</li>
-    </ul>
-  </aside>
-
-  <aside class="card">
-    <h3>💼 경력</h3>
-    <p>해당 없음</p>
-  </aside>
-
-  <aside class="card">
-    <h3>📝 교육</h3>
-    <p>해당 없음</p>
-  </aside>
-
-  <aside class="card">
-    <h3>📌 특기</h3>
-    <p>운동, 역동적 활동</p>
-  </aside>
-
-  <aside class="card">
-    <h3>🏦 동아리</h3>
-    <p>해당 없음</p>
-  </aside>
-
-  <aside class="card">
-    <h3>📜 자격증</h3>
-    <p>해당 없음</p>
-  </aside>
-
-  <aside class="card">
-    <h3>🏅 수상이력</h3>
-    <p>해당 없음</p>
-  </aside>
-
-  <aside class="card">
-    <h3>⚙️ 스택</h3>
-    <h4>AI / Data</h4>
-    <div class="tags">
-      <span class="tag">Python</span>
-      <span class="tag">TensorFlow</span>
-      <span class="tag">CNN</span>
-      <span class="tag">PyTorch</span>
-    </div>
-    <h4>Frontend</h4>
-    <div class="tags">
-      <span class="tag">TypeScript</span>
-      <span class="tag">React</span>
-      <span class="tag">React Native</span>
-      <span class="tag">HTML5</span>
-    </div>
-    <h4>Database, tools</h4>
-    <div class="tags">
-      <span class="tag">SQL</span>
-      <span class="tag">Node.js</span>
-    </div>
-  </aside>
-
-  <!-- 2. 입사 희망 분야 -->
-  <h2 class="section-title">2. 입사 희망 분야</h2>
-
-  <aside class="card">
-    <h3>🏢 입사희망기업</h3>
-
-    <div class="company-block">
-      <h4>오티아이</h4>
-      <p class="division">사업부문 · SM</p>
+      <h3 class="sub-title">성격</h3>
+      <p><strong>장점</strong></p>
       <ul>
-        <li>공공기관 업무 시스템 운영 및 유지보수</li>
-        <li>장애 분석 및 원인 파악, 문제 해결</li>
-        <li>사용자 요구사항 반영 및 기능 개선</li>
+        <li>새로운 기술을 학습하고 프로젝트에 주도적으로 적용해 보는 것을 즐깁니다.</li>
+        <li>주어진 과업에 강한 책임감을 가지고 완료 시점까지 꼼꼼히 이끌어갑니다.</li>
+        <li>상호 존중 기반의 원활한 소통을 통해 팀 내 의견 조율과 협업에 능합니다.</li>
       </ul>
-    </div>
-
-    <div class="company-block">
-      <h4>엑사아이엔티</h4>
-      <p class="division">사업부문 · SI</p>
+      <p><strong>보완점 및 가치관</strong></p>
       <ul>
-        <li>Java/Spring Boot 기반 업무 시스템 개발</li>
-        <li>공공기관 시스템 구축 및 기능 개발</li>
+        <li>디테일과 완성도에 몰입해 일정 조율 시 신중해지는 경향이 있어, 마일스톤과 우선순위를 기준으로 효율적인 의사결정을 실천하고 있습니다.</li>
+        <li>불필요하게 소모되는 비효율적인 업무 방식을 지양하고, 시스템화 및 자동화를 추구합니다.</li>
       </ul>
-      <p class="division">웹 서비스 개발</p>
-      <ul>
-        <li>백엔드 서버 개발</li>
-        <li>DB 설계 및 관리</li>
+
+      <h3 class="sub-title">목표 (Goals)</h3>
+      <p><strong>교육생으로서의 목표</strong></p>
+      <ul class="checklist">
+        <li>Java와 Spring Boot 기반 엔터프라이즈 백엔드 아키텍처 및 API 설계 역량 극대화</li>
+        <li>팀원들과 활발히 협업하여 실무 수준의 협업 프로젝트 완성하기</li>
+        <li>수료 후 채용 연계 기업에 즉시 투입되어 기여할 수 있는 실무 적응력 확보</li>
       </ul>
-    </div>
-  </aside>
+      <p style="margin-top: 10px;"><strong>프로그래머로서의 지향점</strong></p>
+      <ul class="checklist">
+        <li>사용자에게 장애 없이 안정적이고 신뢰할 수 있는 서비스를 제공하는 백엔드 개발자</li>
+        <li>트렌드 변화에 유연하고 능동적으로 대응하며 꾸준히 학습하는 개발자</li>
+        <li>단순한 기능 구현을 넘어 가독성과 유지보수성을 최우선으로 고려하는 코드 작성 습관</li>
+      </ul>
 
-  <!-- 3. 기타포트폴리오 -->
-  <h2 class="section-title">3. 기타포트폴리오</h2>
+      <h3 class="sub-title">기술 스택 (Tech Stack)</h3>
+      <div class="stack-group">
+        <div class="stack-title">AI & Data</div>
+        <div class="badge-container">
+          <span class="badge">Python</span>
+          <span class="badge">PyTorch</span>
+          <span class="badge">TensorFlow</span>
+          <span class="badge">CNN</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-title">Backend & Database</div>
+        <div class="badge-container">
+          <span class="badge">Java</span>
+          <span class="badge">Spring Boot</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Node.js</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-title">Frontend & Mobile</div>
+        <div class="badge-container">
+          <span class="badge">TypeScript</span>
+          <span class="badge">React Native</span>
+          <span class="badge">React</span>
+          <span class="badge">HTML5 / CSS3</span>
+        </div>
+      </div>
+    </section>
 
-  <aside class="card portfolio-item">
-    <h4>AI 법률 상담 서비스</h4>
+    <!-- 2. 입사 희망 분야 -->
+    <section class="card">
+      <h2 class="section-title">2. 입사 희망 분야</h2>
+      <div class="wish-grid">
+        <div class="wish-card">
+          <h4>오티아이 (SM 부문)</h4>
+          <ul>
+            <li>공공기관 업무 시스템 운영 및 안정적인 유지보수</li>
+            <li>시스템 오류 및 장애 원인 분석, 신속한 이슈 해결</li>
+            <li>사용자 요구사항 분석 및 운영 시스템 기능 개선</li>
+          </ul>
+        </div>
+        <div class="wish-card">
+          <h4>엑사아이엔티 (SI 부문)</h4>
+          <ul>
+            <li>Java / Spring Boot 프레임워크 기반 엔터프라이즈 시스템 구축</li>
+            <li>공공기관 시스템 구축 및 신규 웹 서비스 백엔드 기능 개발</li>
+            <li>관계형 데이터베이스(RDB) 스키마 설계 및 데이터 관리</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <p class="sub">프로젝트 개요</p>
-    <ul>
-      <li>소비자 친화적 AI 법률 상담 서비스 개발</li>
-    </ul>
+    <!-- 3. 프로젝트 포트폴리오 -->
+    <section class="card">
+      <h2 class="section-title">3. 프로젝트 포트폴리오</h2>
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">AI 법률 상담 서비스</span>
+          <span style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">Cross-platform App</span>
+        </div>
+        <p class="project-desc">일반 소비자가 법률 정보에 쉽게 접근할 수 있도록 돕는 대화형 AI 어시스턴트 서비스</p>
+        
+        <h4 style="font-size: 0.95rem; margin-bottom: 6px;">담당 역할 및 성과</h4>
+        <ul>
+          <li><strong>모바일 인터페이스 구현</strong>: React Native 및 TypeScript 기반의 반응형 모바일 UI 설계 및 화면 구현</li>
+          <li><strong>사용자 인증 흐름 개발</strong>: 간편 로그인 및 회원가입 시나리오 컴포넌트 설계 및 상태 관리</li>
+          <li><strong>UX/사용자 경험 개선</strong>: 복잡한 법률 질의 입력을 직관적으로 전달할 수 있도록 챗 플로우 및 UI 컴포넌트 최적화</li>
+        </ul>
 
-    <p class="sub">담당 역할</p>
-    <ul>
-      <li>React Native 기반 UI 설계 및 기능 구현</li>
-      <li>로그인 및 회원가입 기능 개발</li>
-      <li>화면 구성 및 사용자 경험(UX) 개선</li>
-    </ul>
+        <h4 style="font-size: 0.95rem; margin: 12px 0 6px;">사용 기술</h4>
+        <div class="badge-container">
+          <span class="badge">React Native</span>
+          <span class="badge">TypeScript</span>
+          <span class="badge">Figma</span>
+        </div>
 
-    <p class="sub">기술 스택</p>
-    <div class="tags">
-      <span class="tag">React Native</span>
-      <span class="tag">TypeScript</span>
-    </div>
+        <div class="btn-group">
+          <a href="https://www.figma.com/design/dSOCKVMOqR3fPf1cgZuEID/AI법률-어시스턴트?node-id=1-3&t=ZgRv7dPToiPqGhwM-1" 
+             target="_blank" 
+             rel="noreferrer" 
+             class="btn btn-primary">
+            🎨 Figma 디자인 산출물 보기 ↗
+          </a>
+          <a href="https://github.com/moongchimom" 
+             target="_blank" 
+             rel="noreferrer" 
+             class="btn btn-secondary">
+            💻 GitHub 프로필 방문 ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
 
-    <a class="link-btn" href="https://www.figma.com/design/dSOCKVMOqR3fPf1cgZuEID/AI법률-어시스턴트?node-id=1-3&t=ZgRv7dPToiPqGhwM-1" target="_blank">Figma 디자인 보기</a>
-  </aside>
-
-</div>
 </body>
 </html>
